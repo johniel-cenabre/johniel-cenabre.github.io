@@ -1,10 +1,1 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><script src="https://unpkg.com/vue@next"></script><script src="https://unpkg.com/vue-router@next"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script><title>Portfolio</title><link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/><script defer="defer" src="main.js"></script></head><body><div id="app"><header><banner v-if="isLarge"></banner><top><template #right><toggle on-text="light" off-text="dark" :on-change="selectTheme" class="theme__toggle"></toggle></template></top></header><main><router-view></router-view></main><footer><banner class="games"></banner></footer></div></body></html>
