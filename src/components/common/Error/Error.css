@@ -1,0 +1,28 @@
+.Error {
+  padding: 1rem 2rem;
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.Error__text {
+  letter-spacing: 0.2rem;
+  color: #ce3737;
+}
+
+.Error__button {
+  outline: 0;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  border: 1px solid #9b9393;
+  border-radius: 12px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.Error__button:hover {
+  color: aliceblue;
+  background-color: blueviolet;
+}

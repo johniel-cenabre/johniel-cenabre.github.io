@@ -1,0 +1,41 @@
+.Profile__heading {
+  padding: 1rem 1rem 0;
+  letter-spacing: 0.3rem;
+  animation: slideRight 1s ease-in-out;
+  overflow: hidden;
+  color: #474646;
+  font-size: 20px;
+}
+
+.Profile__info > * {
+  letter-spacing: 0.2rem;
+  padding: 0.7rem 3rem;
+  font-size: 12px;
+  display: flex;
+  color: #c5c8cc;
+  background-color: #6b6767;
+}
+
+.Profile__info > :nth-child(odd) {
+  color: #aaadb1;
+  background-color: #292323;
+}
+
+.Profile .Card {
+  align-items: end;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width:400px) {
+  .Profile__heading {
+    padding: 2rem 2rem 0;
+  }
+}
