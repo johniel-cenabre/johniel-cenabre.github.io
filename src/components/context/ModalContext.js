@@ -1,17 +1,17 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useCallback, useState } from 'react'
 
 export const ModalContext = createContext()
 
 export const ModalContextProvider = ({ children }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  function openModal() {
+  const openModal = useCallback(() => {
     setModalIsOpen(true)
-  }
+  }, [])
 
-  function closeModal() {
+  const closeModal = useCallback(() => {
     setModalIsOpen(false)
-  }
+  }, [])
 
   return (
     <ModalContext.Provider

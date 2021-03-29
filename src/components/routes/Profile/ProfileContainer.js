@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useCallback } from 'react'
 import { ModalContext } from '../../context/ModalContext'
 import { ArtistContext } from '../../context/ArtistContext'
 import View from './ProfileView'
@@ -74,7 +74,7 @@ const ProfileContainer = props => {
     'price',
   ]
 
-  function sortArtworks(sortBy) {
+  const sortArtworks = useCallback(sortBy => {
     if (typeof sortBy === 'number') {
       setSort({ ...sort, key: artworksSortTypes[sortBy] })
     }
@@ -82,12 +82,12 @@ const ProfileContainer = props => {
     if (typeof sortBy === 'boolean') {
       setSort({ ...sort, direction: sortBy ? 'asc' : 'desc' })
     }
-  }
+  }, [sort])
 
-  function viewArtwork(artwork) {
+  const viewArtwork = useCallback(artwork => {
     setViewedArtwork(artwork)
     openModal()
-  }
+  }, [])
 
   return <View
     {...props}

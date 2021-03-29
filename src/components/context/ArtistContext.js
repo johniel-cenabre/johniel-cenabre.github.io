@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect, useMemo } from 'react'
 import { gql, useQuery } from '@apollo/client'
 
 const GET_ARTISTS = gql`

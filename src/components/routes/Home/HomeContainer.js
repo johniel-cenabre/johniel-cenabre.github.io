@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useCallback } from 'react'
 import { ArtistContext } from '../../context/ArtistContext'
 import View from './HomeView'
 
@@ -20,7 +20,7 @@ const HomeContainer = props => {
     'bio'
   ]
 
-  function sortArtists(sortBy) {
+  const sortArtists = useCallback(sortBy => {
     if (typeof sortBy === 'number') {
       setArtistsSortType(artistsSortTypes[sortBy])
     }
@@ -28,7 +28,7 @@ const HomeContainer = props => {
     if (typeof sortBy === 'boolean') {
       setArtistsSortDirection(sortBy ? 'asc' : 'desc')
     }
-  }
+  }, [])
 
   return <View
     {...props}
