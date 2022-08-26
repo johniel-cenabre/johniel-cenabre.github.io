@@ -1,35 +1,36 @@
-import './index.css'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { ApolloProvider } from '@apollo/client'
-import artsyClient from './api/artsyClient'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom";
 
-import ModalContextProvider from './components/context/ModalContext'
-import ArtistContextProvider from './components/context/ArtistContext'
-import Home from './components/routes/Home'
-import Profile from './components/routes/Profile'
+import Intro from "./sections/Intro";
+import Profile from "./sections/Profile";
+import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
+import Blog from "./sections/Blog";
+import Contact from "./sections/Contact";
+import ThemeSt from "./styles/Theme";
+import Nav from "./layouts/Nav";
+import Main from "./layouts/Main";
 
 const App = () => {
   return (
-    <ApolloProvider client={artsyClient}>
-      <ModalContextProvider>
-        <ArtistContextProvider>
-          <Router>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/artist/:id" component={Profile} />
-            </Switch>
-          </Router>
-        </ArtistContextProvider>
-      </ModalContextProvider>
-    </ApolloProvider>
-  )
-}
+    <ThemeSt>
+      <Nav />
+      <Main>
+        <Intro />
+        <Profile />
+        <Experience />
+        <Projects />
+        <Blog />
+        <Contact />
+      </Main>
+    </ThemeSt>
+  );
+};
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);

@@ -1,0 +1,12 @@
+import styled from "styled-components";
+
+const ThemeSt = styled.div`
+  section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export default ThemeSt;
