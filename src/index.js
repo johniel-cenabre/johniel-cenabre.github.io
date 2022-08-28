@@ -1,30 +1,28 @@
-import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { SWRConfig } from "swr";
 
-import Intro from "./sections/Intro";
-import Profile from "./sections/Profile";
-import Experience from "./sections/Experience";
-import Projects from "./sections/Projects";
-import Blog from "./sections/Blog";
-import Contact from "./sections/Contact";
+import "./index.css";
 import ThemeSt from "./styles/Theme";
-import Nav from "./layouts/Nav";
-import Main from "./layouts/Main";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <ThemeSt>
-      <Nav />
-      <Main>
-        <Intro />
-        <Profile />
-        <Experience />
-        <Projects />
-        <Blog />
-        <Contact />
-      </Main>
-    </ThemeSt>
+    <SWRConfig
+      value={{
+        fetcher: (resource, init) =>
+          fetch(resource, init).then((res) => res.json()),
+      }}
+    >
+      <ThemeSt>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </ThemeSt>
+    </SWRConfig>
   );
 };
 

@@ -19,6 +19,10 @@ const config = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(jpg|jpe?g|png|gif|svg)$/i,
+        use: "file-loader",
+      },
     ],
   },
   resolve: {
