@@ -14,6 +14,17 @@ export const slideRightInCss = css`
   }
 `;
 
+export const slideLeftOutCss = css`
+  @keyframes slideLeftOut {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+`;
+
 export const shortenRightCss = css`
   @keyframes shortenRight {
     0% {
@@ -109,13 +120,57 @@ export const rotateCss = css`
   }
 `;
 
-export const blinkCss = css`
-  @keyframes blink {
+export const fadeInCss = css`
+  @keyframes fadeIn {
     0% {
       opacity: 0;
     }
     100% {
       opacity: 1;
+    }
+  }
+`;
+
+export const rightInCss = css`
+  @keyframes rightIn {
+    0% {
+      left: 50px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+`;
+
+export const topInCss = css`
+  @keyframes topIn {
+    0% {
+      top: -50px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+`;
+
+export const leftInCss = css`
+  @keyframes leftIn {
+    0% {
+      left: -50px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+`;
+
+export const bottomInCss = css`
+  @keyframes bottomIn {
+    0% {
+      top: 50px;
+    }
+    100% {
+      top: 0px;
     }
   }
 `;

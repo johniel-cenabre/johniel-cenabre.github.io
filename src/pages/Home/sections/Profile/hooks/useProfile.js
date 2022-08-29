@@ -29,7 +29,11 @@ const useProfile = ({ showDelay = 3000 } = {}) => {
     }
   }, [image]);
 
+  const classes = [];
+  if (isShownMyInfo) classes.push("light");
+
   return {
+    classes,
     image,
     isError,
     isLoading,
