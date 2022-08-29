@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { positions } from "../Nav";
 
 const useNav = ({ isShown, position, showDelay = 1000 }) => {
-  const classes = [];
-  if (position) classes.push(position);
-
   const [isShownDelayed, setIsShownDelayed] = useState(false);
 
   useEffect(() => {
@@ -25,10 +23,35 @@ const useNav = ({ isShown, position, showDelay = 1000 }) => {
     [pathname, hash]
   );
 
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    if (position === positions.left) {
+      setIsHidden(true);
+    }
+  }, [position]);
+
+  const onClickOutside = useCallback((e) => {
+    if (e.target.tagName === "NAV") {
+      setIsHidden(true);
+    }
+  }, []);
+
+  const onToggleMenu = useCallback((e) => {
+    e.stopPropagation();
+    setIsHidden((curr) => !curr);
+  }, []);
+
+  const classes = [];
+  if (position) classes.push(position);
+  if (isHidden) classes.push("hidden");
+
   return {
     classes,
     isShownDelayed,
     getActiveClassName,
+    onClickOutside,
+    onToggleMenu,
   };
 };
 

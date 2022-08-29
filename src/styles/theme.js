@@ -6,7 +6,12 @@ import {
   rightCss,
   leftCss,
   rotateCss,
-  blinkCss,
+  fadeInCss,
+  slideLeftOutCss,
+  rightInCss,
+  leftInCss,
+  topInCss,
+  bottomInCss,
 } from "./animation";
 
 const ThemeSt = styled.div`
@@ -15,7 +20,6 @@ const ThemeSt = styled.div`
   * {
     font-size: 1.7vh;
     letter-spacing: 3px;
-    background: inherit;
   }
 
   a {
@@ -32,14 +36,28 @@ const ThemeSt = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+  }
+
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   ${slideRightInCss}
+  ${slideLeftOutCss}
   ${shortenRightCss}
   ${rightCss}
   ${leftCss}
   ${rotateCss}
-  ${blinkCss}
+  ${fadeInCss}
+  ${rightInCss}
+  ${leftInCss}
+  ${topInCss}
+  ${bottomInCss}
 `;
 
 export default ThemeSt;

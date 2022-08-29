@@ -7,10 +7,11 @@ import useProfile from "./hooks/useProfile";
 import ProfileSt from "./Profile.style";
 
 const Profile = () => {
-  const { image, isError, isLoading, loadImage, isShownMyInfo } = useProfile();
+  const { classes, image, isError, isLoading, loadImage, isShownMyInfo } =
+    useProfile();
   return (
-    <ProfileSt id="profile">
-      <div>
+    <ProfileSt className={classes.join(" ")} id="profile">
+      <div id="profile-container">
         <ImageLoader
           className="image"
           text="View Profile"
@@ -19,45 +20,49 @@ const Profile = () => {
           isLoading={isLoading}
           loadImage={loadImage}
         />
-        <TextReveal
-          className="my-info"
-          isShown={isShownMyInfo}
-          blinker={<div className="blinker" />}
-        >
-          Johniel Judah Cenabre
-        </TextReveal>
-        <TextReveal
-          className="my-info"
-          showDelay={1500}
-          isShown={isShownMyInfo}
-          blinker={<div className="blinker" />}
-        >
-          Fullstack Developer
-        </TextReveal>
-        <TextReveal
-          className="my-info"
-          showDelay={3000}
-          isShown={isShownMyInfo}
-          blinker={<div className="blinker" />}
-        >
-          Cebu, Philippines
-        </TextReveal>
-        <TextReveal
-          className="my-info"
-          showDelay={4500}
-          isShown={isShownMyInfo}
-          blinker={<div className="blinker" />}
-        >
-          JS || CSS || PHP || SQL
-        </TextReveal>
-        <TextReveal
-          className="my-info"
-          showDelay={6000}
-          isShown={isShownMyInfo}
-          blinker={<div className="blinker" />}
-        >
-          React || Node || Laravel || AWS
-        </TextReveal>
+        {isShownMyInfo && (
+          <div id="my-info-container">
+            <TextReveal
+              className="my-info"
+              isShown={isShownMyInfo}
+              blinker={<div className="blinker" />}
+            >
+              Johniel Judah Cenabre
+            </TextReveal>
+            <TextReveal
+              className="my-info"
+              showDelay={1500}
+              isShown={isShownMyInfo}
+              blinker={<div className="blinker" />}
+            >
+              Fullstack Developer
+            </TextReveal>
+            <TextReveal
+              className="my-info"
+              showDelay={3000}
+              isShown={isShownMyInfo}
+              blinker={<div className="blinker" />}
+            >
+              BSIT, ACT, Cebu, Philippines
+            </TextReveal>
+            <TextReveal
+              className="my-info skills"
+              showDelay={4500}
+              isShown={isShownMyInfo}
+              blinker={<div className="blinker" />}
+            >
+              JS || CSS || PHP || SQL || GIT
+            </TextReveal>
+            <TextReveal
+              className="my-info skills"
+              showDelay={6000}
+              isShown={isShownMyInfo}
+              blinker={<div className="blinker" />}
+            >
+              React || Node || Laravel || AWS
+            </TextReveal>
+          </div>
+        )}
       </div>
     </ProfileSt>
   );

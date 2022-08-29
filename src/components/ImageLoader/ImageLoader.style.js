@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const size = 7;
-const multi = 1.3;
+const multi = 1.47;
 const multiDanger = 4.7;
 const multiOk = 1.3;
 
@@ -28,9 +28,10 @@ const ImageLoaderSt = styled.button`
   border-color: ${glow1};
   box-sizing: border-box;
   animation: none;
+  background: none;
 
   &:hover {
-    box-shadow: 0 0 10px 3px ${glow1};
+    box-shadow: 0 0 30px 3px ${glow1};
   }
 
   &:before {
@@ -56,6 +57,7 @@ const ImageLoaderSt = styled.button`
     box-shadow: 0 0 0 0 ${bg}, 0 0 2px 3px ${glow1}, 0 0 4px 25px ${bg},
       0 0 1px 32px ${bg}, 0 0 32px 25px ${glow1}, 0 0 32px 25px ${bg};
     animation: pulse1 1.4s linear infinite;
+    cursor: unset;
 
     &:before {
       content: "";
@@ -74,6 +76,7 @@ const ImageLoaderSt = styled.button`
     border-color: ${glow2};
     box-shadow: 0 0 10px 2px ${glow2};
     animation: none;
+    cursor: unset;
 
     &:before {
       border-color: ${glow2};
@@ -152,7 +155,7 @@ const ImageLoaderSt = styled.button`
     width: ${size * multiOk}em;
     height: auto;
     clip-path: circle();
-    transform: scale(1.37);
+    transform: scale(1.43);
   }
 `;
 

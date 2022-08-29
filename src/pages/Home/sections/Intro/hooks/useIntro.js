@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useIntro = ({ loadDelay = 0 }) => {
+const useIntro = ({ loadDelay = 0 } = {}) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

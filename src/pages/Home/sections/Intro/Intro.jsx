@@ -15,14 +15,14 @@ const Intro = () => {
 
   if (clientResponse.isValidating || isLoading)
     return (
-      <IntroSt id="top">
+      <IntroSt>
         <Loader text="Syncing..." />
       </IntroSt>
     );
 
   return (
-    <IntroSt id="top">
-      <div>
+    <IntroSt>
+      <div id="intro-container">
         <TextReveal blinker={<div className="blinker" />}>
           Welcome IP <ClientInfoSt>{IPv4}</ClientInfoSt>
         </TextReveal>

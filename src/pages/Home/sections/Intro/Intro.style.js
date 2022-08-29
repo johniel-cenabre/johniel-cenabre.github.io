@@ -4,7 +4,7 @@ import styled from "styled-components";
 const IntroSt = styled.section`
   padding: 0 1.7rem;
 
-  > div {
+  #intro-container {
     width: 100%;
     display: grid;
     justify-items: center;

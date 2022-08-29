@@ -2,6 +2,8 @@ import styled from "styled-components";
 import TextReveal from "../TextReveal";
 
 const LoaderSt = styled.div`
+  animation: fadeIn 1s ease-in;
+
   .ball {
     width: 24px;
     height: 24px;
