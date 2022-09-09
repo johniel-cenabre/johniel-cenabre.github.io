@@ -13,7 +13,7 @@ const NavSt = styled.nav`
       position: absolute;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 1rem 2rem;
       background: linear-gradient(to right, #050101cc, #110303cc);
       box-shadow: rgba(240, 46, 170, 0.4) 0px 3px 7px,
         rgba(240, 46, 170, 0.3) 0px 6px 12px,
