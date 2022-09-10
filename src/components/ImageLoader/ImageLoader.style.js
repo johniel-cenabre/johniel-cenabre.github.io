@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const size = 7;
+const sizes = {
+  sm: 3,
+  md: 5,
+  lg: 7,
+};
 const multi = 1.47;
 const multiDanger = 4.7;
 const multiOk = 1.3;
@@ -16,12 +20,12 @@ const ImageLoaderSt = styled.button`
   font-size: 1em;
   color: ${glow1};
   font-weight: 100;
-  width: ${size * 1.8}em;
-  height: ${size * 1.8}em;
-  line-height: ${size * 1.8}em;
+  width: ${({ size }) => sizes[size] * 1.8}em;
+  height: ${({ size }) => sizes[size] * 1.8}em;
+  line-height: ${({ size }) => sizes[size] * 1.8}em;
   text-align: center;
-  /* margin-left: -${size / 2}em;
-  margin-top: -${size / 2}em; */
+  /* margin-left: -${({ size }) => sizes[size] / 2}em;
+  margin-top: -${({ size }) => sizes[size] / 2}em; */
   border-radius: 100%;
   transition: all 0.3s ease-in-out;
   border: 2px solid ${glow1};
@@ -29,6 +33,10 @@ const ImageLoaderSt = styled.button`
   box-sizing: border-box;
   animation: none;
   background: none;
+
+  img {
+    animation: fadeIn 1s ease-in;
+  }
 
   &:hover {
     box-shadow: 0 0 30px 3px ${glow1};
@@ -44,11 +52,10 @@ const ImageLoaderSt = styled.button`
 
     border-top: 1px solid ${glow3};
     border-bottom: 1px solid ${glow2};
-
-    width: ${size * multiDanger}em;
-    height: ${size * multiDanger}em;
-    margin-left: -${(size * multiDanger) / 2}em;
-    margin-top: -${(size * multiDanger) / 2}em;
+    width: ${({ size }) => sizes[size] * multiDanger}em;
+    height: ${({ size }) => sizes[size] * multiDanger}em;
+    margin-left: -${({ size }) => (sizes[size] * multiDanger) / 2}em;
+    margin-top: -${({ size }) => (sizes[size] * multiDanger) / 2}em;
     transition: opacity 1s ease 0.6s, border 0.4s ease 0s, width 0.4s ease 0.2s,
       height 0.4s ease 0.2s, margin 0.4s ease 0.2s;
   }
@@ -64,10 +71,10 @@ const ImageLoaderSt = styled.button`
       opacity: 1;
       animation: rotate 0.45s linear infinite;
 
-      width: ${size * multi}em;
-      height: ${size * multi}em;
-      margin-left: -${(size * multi) / 2}em;
-      margin-top: -${(size * multi) / 2}em;
+      width: ${({ size }) => sizes[size] * multi}em;
+      height: ${({ size }) => sizes[size] * multi}em;
+      margin-left: -${({ size }) => (sizes[size] * multi) / 2}em;
+      margin-top: -${({ size }) => (sizes[size] * multi) / 2}em;
     }
   }
 
@@ -81,11 +88,10 @@ const ImageLoaderSt = styled.button`
     &:before {
       border-color: ${glow2};
       opacity: 0;
-
-      width: ${size * multiDanger}em;
-      height: ${size * multiDanger}em;
-      margin-left: -${(size * multiDanger) / 2}em;
-      margin-top: -${(size * multiDanger) / 2}em;
+      width: ${({ size }) => sizes[size] * multiDanger}em;
+      height: ${({ size }) => sizes[size] * multiDanger}em;
+      margin-left: -${({ size }) => (sizes[size] * multiDanger) / 2}em;
+      margin-top: -${({ size }) => (sizes[size] * multiDanger) / 2}em;
     }
   }
 
@@ -100,10 +106,10 @@ const ImageLoaderSt = styled.button`
       border-color: ${glow3};
       opacity: 0;
 
-      width: ${size * multiOk}em;
-      height: ${size * multiOk}em;
-      margin-left: -${(size * multiOk) / 2}em;
-      margin-top: -${(size * multiOk) / 2}em;
+      width: ${({ size }) => sizes[size] * multiOk}em;
+      height: ${({ size }) => sizes[size] * multiOk}em;
+      margin-left: -${({ size }) => (sizes[size] * multiOk) / 2}em;
+      margin-top: -${({ size }) => (sizes[size] * multiOk) / 2}em;
     }
   }
 
@@ -152,7 +158,7 @@ const ImageLoaderSt = styled.button`
   }
 
   img {
-    width: ${size * multiOk}em;
+    width: ${({ size }) => sizes[size] * multiOk}em;
     height: auto;
     clip-path: circle();
     transform: scale(1.43);

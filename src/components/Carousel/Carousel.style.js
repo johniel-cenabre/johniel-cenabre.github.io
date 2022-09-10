@@ -12,8 +12,7 @@ const CarouselSt = styled.div`
     #container {
       margin: 0 auto;
       width: ${({ childCount }) =>
-        childCount * 40 * (window.innerWidth / 600)}px;
-      height: 400px;
+        childCount * 40 * (window.innerWidth / 500)}px;
       height: 400px;
       position: relative;
       perspective: 1000px;
@@ -25,19 +24,20 @@ const CarouselSt = styled.div`
         transform: rotateY(${({ currDeg }) => currDeg}deg);
         transform-style: preserve-3d;
         transition: transform 1s ease-in-out;
+        animation: tornado 3s ease-out;
 
         > * {
-          display: block;
           position: absolute;
-          background: rgba(0, 0, 0, 0.77);
+          background: rgba(0, 0, 0, 0.88);
           padding: 1rem;
           width: ${({ childCount }) =>
-            childCount * 40 * (window.innerWidth / 600)}px;
+            childCount * 40 * (window.innerWidth / 500)}px;
           height: 400px;
           text-align: center;
           color: #fff;
           border-radius: 10px;
           border: 1px solid rgba(240, 46, 170, 0.7);
+          overflow: hidden;
 
           * {
             font-size: 10px;
@@ -49,7 +49,7 @@ const CarouselSt = styled.div`
           new Array(childCount).fill(null).map((_, i) => {
             return `> :nth-child(${i + 1}) {
               transform: rotateY(${i * degrees}deg) translateZ(${
-              childCount * 40 * (window.innerWidth / 600)
+              childCount * 40 * (window.innerWidth / 500)
             }px);
             }`;
           })}
@@ -108,7 +108,7 @@ const CarouselSt = styled.div`
 export const CarouselButtonSt = styled.button`
   z-index: 999;
   font-size: 77px;
-  color: rgba(240, 46, 170, 0.7);
+  color: rgba(240, 46, 170, 0.77);
   filter: brightness(1.3);
   background: none;
   border: none;

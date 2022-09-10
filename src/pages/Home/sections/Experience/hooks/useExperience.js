@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useExperience = ({ loadDelay = 0 } = {}) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const handler = setTimeout(() => {

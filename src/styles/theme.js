@@ -12,6 +12,7 @@ import {
   leftInCss,
   topInCss,
   bottomInCss,
+  tornadoCss,
 } from "./animation";
 
 const ThemeSt = styled.div`
@@ -32,7 +33,7 @@ const ThemeSt = styled.div`
 
   section {
     width: 100%;
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +59,7 @@ const ThemeSt = styled.div`
   ${leftInCss}
   ${topInCss}
   ${bottomInCss}
+  ${tornadoCss}
 `;
 
 export default ThemeSt;

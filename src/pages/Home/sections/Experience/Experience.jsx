@@ -1,17 +1,16 @@
 import React from "react";
 
-import ImageLoader from "../../../../components/ImageLoader";
-import TextReveal from "../../../../components/TextReveal";
-
 import useExperience from "./hooks/useExperience";
 import ExperienceSt from "./Experience.style";
+import Company from "./Experience.company";
 import Carousel from "../../../../components/Carousel/Carousel";
+import casual from "../../../../../public/icons/formal.jpg";
 
 const EXPERIENCE = [
   {
     company: "Fullspeed Technologies Inc",
-    image: null,
-    position: "Software Engineer",
+    image: casual,
+    position: "Junior Software Engineer",
     status: "Full Time",
     stack: "React | Node | Laravel | MySql",
   },
@@ -46,21 +45,18 @@ const EXPERIENCE = [
 ];
 
 const Experience = () => {
-  const { classes, image, isError, isLoading, loadImage, isShownMyInfo } =
-    useExperience();
+  const { classes } = useExperience();
   return (
     <ExperienceSt className={classes.join(" ")} id="experience">
       <div id="experience-container">
         <Carousel>
           {EXPERIENCE.map((e, i) => (
-            <div key={`${e.company}${i}`}>
-              <h1>
-                <TextReveal>{e.company}</TextReveal>
-              </h1>
-              <TextReveal>{e.position}</TextReveal>
-              <TextReveal>{e.status}</TextReveal>
-              <TextReveal>{e.stack}</TextReveal>
-            </div>
+            <Company
+              key={`${e.company}${i}`}
+              experience={e}
+              index={i}
+              showDelay={(i + 4) * 1000}
+            />
           ))}
         </Carousel>
       </div>

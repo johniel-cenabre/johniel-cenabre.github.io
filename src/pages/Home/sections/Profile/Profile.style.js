@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const ProfileSt = styled.section`
+  && {
+    min-height: 120vh;
+  }
+
   #profile-container {
     width: 100%;
     display: grid;
@@ -10,10 +14,6 @@ const ProfileSt = styled.section`
       justify-self: center;
       margin-bottom: 3rem;
       z-index: 1000;
-
-      img {
-        animation: fadeIn 1s ease-in;
-      }
     }
 
     #my-info-container {

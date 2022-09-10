@@ -8,17 +8,33 @@ const ImageLoader = ({
   image,
   isError,
   isLoading,
+  size = "lg",
   text,
   loadImage,
+  autoLoadImage,
 }) => {
-  const { classes } = useImageLoader({ image, isError, isLoading });
+  const { classes } = useImageLoader({
+    image,
+    isError,
+    isLoading,
+    autoLoadImage,
+  });
 
   return (
     <ImageLoaderSt
       className={[className, ...classes].join(" ")}
+      size={size}
       onClick={loadImage}
     >
-      {image ? <img src={image} /> : isLoading ? "Loading Profile" : text}
+      {image ? (
+        <img src={image} />
+      ) : isLoading ? (
+        "Loading"
+      ) : text ? (
+        text
+      ) : (
+        "Error"
+      )}
     </ImageLoaderSt>
   );
 };

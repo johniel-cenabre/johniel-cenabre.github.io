@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useTextReveal = ({ isShown = true, showDelay = 0 }) => {
+const useTextReveal = ({ isShown = true, showDelay = 500 }) => {
   const [isShownDelayed, setIsShownDelayed] = useState(false);
 
   useEffect(() => {
