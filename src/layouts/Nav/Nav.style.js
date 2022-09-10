@@ -8,6 +8,7 @@ const NavSt = styled.nav`
     position: fixed;
     width: 100vw;
     background: none;
+    transition: background 1s ease-in-out;
 
     #link-wrapper {
       position: absolute;
@@ -47,6 +48,11 @@ const NavSt = styled.nav`
 
     &.left {
       height: 100vh;
+      background: linear-gradient(
+        to right,
+        rgba(240, 46, 170, 0.3),
+        rgba(240, 46, 170, 0.1)
+      );
 
       #link-wrapper {
         padding-top: 10rem;
@@ -76,6 +82,7 @@ const NavSt = styled.nav`
 
       &.hidden {
         pointer-events: none;
+        background: none;
 
         #link-wrapper {
           animation: slideLeftOut 1s ease-out;
